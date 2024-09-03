@@ -1,0 +1,425 @@
+<!-- reporters/templates/reporters/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thamsanqa William Male</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        footer {
+            background-color: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Thamsanqa William Male</h1>
+        <nav>
+            <a href="{% url 'welcome' %}">thamsanqa male</a>
+            <a href="{% url 'register' %}">Contacts and offerings</a>
+            <a href="{% url 'login' %}">More info</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Thamsanqa William Male. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- reporters/templates/reporters/login.html -->
+{% extends "reporters/base.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        color: #007bff;
+        text-align: center;
+        margin-top: 20px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: center;
+        margin: 20px 0;
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    h3 {
+        color: #0056b3;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 5px;
+        margin-top: 30px;
+    }
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+        margin: 10px 0;
+    }
+    ul li {
+        margin-bottom: 10px;
+    }
+    .contact-info {
+        text-align: center;
+        margin: 30px 0;
+    }
+    .contact-info a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<h3>About Our Platform</h3>
+<p>Our platform is at the forefront of innovation in software development, web development, and automation, particularly in the domain of forex trading. We combine cutting-edge technologies with robust methodologies to provide solutions that cater to the dynamic needs of modern trading and software applications.</p>
+
+<h3>Software Development</h3>
+<p>Software development is a systematic process of creating and maintaining applications, frameworks, and other software components. The development lifecycle typically includes planning, analysis, design, implementation, testing, deployment, and maintenance. Our approach to software development emphasizes:</p>
+<ul>
+    <li><strong>Agile Methodologies:</strong> We use Agile practices to ensure flexibility and iterative progress, allowing us to adapt quickly to changing requirements and deliver value early and often.</li>
+    <li><strong>Quality Assurance:</strong> Our team employs rigorous testing procedures to ensure that our software is reliable, secure, and performs optimally under various conditions.</li>
+    <li><strong>Scalability:</strong> We design software solutions that can grow and adapt with your needs, ensuring that they remain effective as demands increase.</li>
+    <li><strong>Security:</strong> With a focus on protecting user data and ensuring compliance with industry standards, we implement robust security measures throughout the development process.</li>
+</ul>
+
+<h3>Web Development</h3>
+<p>Web development encompasses the tasks associated with creating and maintaining websites. It includes web design, web content development, client-side/server-side scripting, and network security configuration. Our web development services include:</p>
+<ul>
+    <li><strong>Front-End Development:</strong> We build engaging and responsive user interfaces using technologies like HTML, CSS, and JavaScript. Our focus is on delivering a seamless user experience across various devices and browsers.</li>
+    <li><strong>Back-End Development:</strong> Our team develops the server-side logic, databases, and application integration that power your website. We work with a range of technologies, including Python, Ruby, PHP, and Node.js, to create robust back-end systems.</li>
+    <li><strong>Content Management Systems (CMS):</strong> We implement and customize CMS platforms like WordPress, Drupal, and Joomla, enabling clients to manage and update their web content easily.</li>
+    <li><strong>SEO Optimization:</strong> To ensure that your website ranks well in search engine results, we incorporate best practices for search engine optimization, including keyword research, on-page optimization, and performance enhancements.</li>
+    <li><strong>Web Application Development:</strong> Beyond traditional websites, we develop complex web applications that offer advanced functionality and interactivity, tailored to your business needs.</li>
+</ul>
+
+<h3>Automation in Forex Trading</h3>
+<p>Forex trading involves significant complexity and requires timely decision-making to achieve success. Automation has become a key factor in enhancing trading strategies and improving efficiency. Our platform integrates advanced automation techniques to optimize forex trading processes:</p>
+<ul>
+    <li><strong>Algorithmic Trading:</strong> We develop and implement algorithms that can automatically execute trades based on predefined criteria. These algorithms help in making faster decisions and reducing emotional biases in trading.</li>
+    <li><strong>Trading Bots:</strong> Our trading bots are programmed to perform trades on your behalf, utilizing historical data and real-time market analysis to identify profitable opportunities.</li>
+    <li><strong>Risk Management:</strong> Automation tools help in managing risks by setting stop-loss and take-profit levels automatically. This minimizes potential losses and locks in gains based on your trading strategy.</li>
+    <li><strong>Market Analysis:</strong> Automated systems can analyze vast amounts of market data and generate insights that aid in making informed trading decisions. This includes technical analysis, sentiment analysis, and pattern recognition.</li>
+    <li><strong>Backtesting:</strong> We utilize automated backtesting to evaluate trading strategies using historical data. This helps in refining strategies and understanding their potential performance before live implementation.</li>
+    <li><strong>Integration with Trading Platforms:</strong> Our solutions integrate seamlessly with popular trading platforms like MetaTrader, cTrader, and others, ensuring a smooth and efficient trading experience.</li>
+</ul>
+
+<h3>Contact Us</h3>
+<div class="contact-info">
+    <p>If you have any questions or need further information about our services, please feel free to reach out to us:</p>
+    <ul>
+        <li><strong>Phone:</strong> +2773605226</li>
+        <li><strong>Email:</strong> <a href="mailto:thamiwinner@gmail.com">thamiwinner@gmail.com</a></li>
+    </ul>
+</div>
+
+<p>Thank you for visiting our platform. We look forward to assisting you with your software development, web development, and forex trading automation needs.</p>
+
+{% endblock %}
+
+
+<!-- reporters/templates/reporters/register.html -->
+{% extends "reporters/base.html" %}
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    h2 {
+        color: #007bff;
+    }
+    h3 {
+        color: #0056b3;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 5px;
+    }
+    h4 {
+        color: #004085;
+        margin-top: 20px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    form {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: 20px auto;
+    }
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #0056b3;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    ul li {
+        background: #e9ecef;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<h2>Register</h2>
+<p>Register to gain access to our premium services. Please fill out the form below to create your account.</p>
+
+
+
+<h3>Our Service Pricing</h3>
+<p>We offer a range of services tailored to meet your needs. Below is an overview of our pricing:</p>
+
+<h4>Software Development</h4>
+<ul>
+    <li><strong>Basic Package:</strong> $2,000 - Includes development of a basic application with core features and functionalities.</li>
+    <li><strong>Standard Package:</strong> $5,000 - Includes development of a medium-complexity application with additional features and integrations.</li>
+    <li><strong>Premium Package:</strong> $10,000 - Includes development of a high-complexity application with advanced features, custom integrations, and extensive testing.</li>
+    <li><strong>Maintenance and Support:</strong> $500/month - Ongoing support and maintenance, including updates and troubleshooting.</li>
+</ul>
+
+<h4>Web Development</h4>
+<ul>
+    <li><strong>Basic Website:</strong> $1,000 - Includes a standard website with up to 5 pages, responsive design, and basic SEO optimization.</li>
+    <li><strong>Business Website:</strong> $2,500 - Includes a more complex website with up to 15 pages, advanced SEO, and integration with CMS.</li>
+    <li><strong>E-commerce Website:</strong> $4,000 - Includes a fully functional e-commerce site with shopping cart, payment gateway, and product management.</li>
+    <li><strong>Custom Web Applications:</strong> $6,000 - $15,000 - Pricing varies based on the complexity and features of the custom web application.</li>
+</ul>
+
+<h4>Forex Trading Automation</h4>
+<ul>
+    <li><strong>Basic Trading Bot:</strong> $1,500 - Includes a basic trading bot with predefined trading strategies and limited customization.</li>
+    <li><strong>Advanced Trading Bot:</strong> $3,500 - Includes an advanced trading bot with customizable strategies, real-time analysis, and advanced risk management.</li>
+    <li><strong>Full Automation Suite:</strong> $6,000 - Includes comprehensive automation tools with multiple trading strategies, advanced analytics, and seamless integration with major trading platforms.</li>
+    <li><strong>Consultation and Strategy Development:</strong> $500/hour - Expert consultation to develop and refine trading strategies and automation systems.</li>
+</ul>
+
+<p>If you have specific needs or require a custom quote, please <a href="mailto:thamiwinner@gmail.com">contact us</a>. We're here to provide tailored solutions to fit your requirements.</p>
+
+{% endblock %}
+
+<!-- reporters/templates/reporters/welcome.html -->
+{% extends "reporters/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    .welcome-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        color: #007bff;
+        margin-top: 0;
+    }
+    h3 {
+        color: #0056b3;
+        border-bottom: 2px solid #0056b3;
+        padding-bottom: 5px;
+        margin-top: 20px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+    ul li {
+        margin-bottom: 10px;
+    }
+    .about-me, .services {
+        margin-bottom: 20px;
+    }
+    .contact-buttons {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 5px;
+    }
+    .btn-primary {
+        background-color: #007bff;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    .btn-secondary {
+        background-color: #6c757d;
+    }
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="welcome-container">
+    <h2>Welcome to Thamsanqa Male William's Freelance Services</h2>
+    <p>I specialize in creating automated trading solutions for the forex market. With a strong background in software development, particularly in Python and Django, I offer customized MQL4 and MQL5 scripts and fully-tested forex robots at competitive prices.</p>
+    
+    <div class="about-me">
+        <h3>About Me</h3>
+        <p>My name is Thamsanqa Male William. I hold a BCom in Information Systems, where I have gained comprehensive knowledge in software development and information systems. My coursework included modules in:</p>
+        <ul>
+            <li><strong>Software Development:</strong> Understanding the fundamental structure of software and its application in various contexts.</li>
+            <li><strong>Information Systems:</strong> Gaining insights into different information systems and troubleshooting day-to-day tech issues like printers and computers.</li>
+            <li><strong>Business Management and Entrepreneurship:</strong> Learning how businesses use IT to enhance their operations and the role of IT in organizational efficiency.</li>
+        </ul>
+    </div>
+    
+    <div class="services">
+        <h3>Services Offered</h3>
+        <p>I offer a range of services tailored to the needs of forex traders, including:</p>
+        <ul>
+            <li><strong>MQL4/5 Script Creation:</strong> Developing custom scripts for forex trading automation.</li>
+            <li><strong>Fully-Tested Forex Robots:</strong> Providing high-quality, thoroughly tested forex robots that are designed to deliver optimal performance.</li>
+            <li><strong>Software Solutions:</strong> Offering tailored software solutions for various trading needs.</li>
+        </ul>
+    </div>
+    
+    <div class="contact-buttons">
+        <a href="{% url 'register' %}" class="btn btn-primary">Contact Me</a>
+        <a href="{% url 'login' %}" class="btn btn-secondary">View Portfolio</a>
+    </div>
+</div>
+
+{% endblock %}
